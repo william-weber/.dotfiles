@@ -19,7 +19,47 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
+# add some more dirs to search binaries for...
 
+# mysql
+if [ -d /usr/local/mysql/bin ]; then
+    PATH=/usr/local/mysql/bin:$PATH
+fi
+
+# php
+if [ -d /usr/local/php/bin ]; then
+    PATH=/usr/local/php/bin:$PATH
+fi
+
+# for fink in mac os x
+if [ -f /sw/bin/init.sh ]; then
+    source /sw/bin/init.sh
+fi
+
+# for ports in mac os x
+if [ -d /opt/local/bin ]; then
+    PATH=/opt/local/bin:$PATH
+fi
+
+# local sbin apps
+if [ -d /usr/local/sbin ]; then
+    PATH=/usr/local/sbin:$PATH
+fi
+
+if [ -d /usr/local/bin ]; then
+    PATH=/usr/local/bin:$PATH
+fi
+
+if [ -d $HOME/bin ]; then
+    PATH=$HOME/bin:$PATH
+fi
+export PATH
+
+# Locale info
+
+export LC_ALL=C
+export LC_CTYPE="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 
 ###########################################
 # fancy prompt with git branch
@@ -90,22 +130,10 @@ proml
 #    . ~/.bash_aliases
 #fi
 
-# enable color support of ls and also add handy aliases
-if [ "$TERM" != "dumb" ]; then
-    eval "`dircolors -b`"
-    alias ls='ls --color=auto'
-fi
 
-if [ `uname -s` = "Darwin" ] ; then
-    alias ls='\ls -FG'
-    alias ll='\ls -aFlG'
-    alias lsd='\ls -aldG * | egrep "^d"'
-else
-    alias ls='\ls -F --color=auto'
-    alias ll='\ls -aFl --color=auto'
-    alias lsd='\ls -ald --color=auto * | egrep "^d"'
-fi
-
+alias ls='\ls -F --color=auto'
+alias ll='\ls -aFl --color=auto'
+alias lsd='\ls -ald --color=auto * | egrep "^d"'
 alias bymostrecent="ls -lurtF"  
 alias bysize="ls -lurS"  
 alias psg="ps -auxww | grep -i "
@@ -125,49 +153,6 @@ lmcdental="lmcdental.lmcmc.com"
 export EDITOR=vim
 export CVS_RSH=ssh
 
-# mysql
-if [ -d /usr/local/mysql/bin ]; then
-    PATH=/usr/local/mysql/bin:$PATH
-fi
-
-# php
-
-if [ -d /usr/local/php/bin ]; then
-    PATH=/usr/local/php/bin:$PATH
-fi
-
-# for fink in mac os x
-
-if [ -f /sw/bin/init.sh ]; then
-    source /sw/bin/init.sh
-fi
-
-# for ports in mac os x
-
-if [ -d /opt/local/bin ]; then
-    PATH=/opt/local/bin:$PATH
-fi
-
-# local apps
-#
-if [ -d /usr/local/sbin ]; then
-    PATH=/usr/local/sbin:$PATH
-fi
-
-if [ -d /usr/local/bin ]; then
-    PATH=/usr/local/bin:$PATH
-fi
-
-if [ -d $HOME/bin ]; then
-    PATH=$HOME/bin:$PATH
-fi
-export PATH
-
-# Locale info
-
-export LC_ALL=C
-export LC_CTYPE="en_US.UTF-8"
-export LANG="en_US.UTF-8"
 
 #enable vi command line editing
 set -o vi
@@ -176,4 +161,12 @@ set -o vi
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
+fi
+
+# Mac OS X specific
+if [ `uname -s` = "Darwin" ] ; then
+    alias ls='\ls -FG'
+    alias ll='\ls -aFlG'
+    alias lsd='\ls -aldG * | egrep "^d"'
+    alias gvim='~/bin/gvim.mac'
 fi

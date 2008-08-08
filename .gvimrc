@@ -1,2 +1,2 @@
 set mousehide		" Hide the mouse when typing text
-set guifont=DejaVu\ Sans\ Mono\ 13
+set guifont=DejaVu_Sans_Mono:h13
