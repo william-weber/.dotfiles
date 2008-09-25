@@ -170,3 +170,10 @@ if [ `uname -s` = "Darwin" ] ; then
     alias lsd='\ls -aldG * | egrep "^d"'
     alias gvim='~/bin/gvim.mac'
 fi
+
+if [ -f /usr/local/jruby/bin/jruby ]; then
+    export JRUBY_HOME=/usr/local/bin/jruby
+    # share gem library with cruby and jruby
+    #export GEM_HOME=/usr/local/lib/ruby/gems/1.8
+    PATH=$PATH:/usr/local/jruby/bin
+fi
