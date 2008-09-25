@@ -76,6 +76,7 @@ function proml {
   local LIGHT_GREEN="\[\033[1;32m\]"
   local       WHITE="\[\033[1;37m\]"
   local  LIGHT_GRAY="\[\033[0;37m\]"
+  local      YELLOW="\[\033[1;33m\]"
   case $TERM in
     xterm*)
     TITLEBAR='\[\033]0;\u@\h:\w\007\]'
@@ -87,7 +88,7 @@ function proml {
 
 PS1="${TITLEBAR}\
 $BLUE[$RED\$(date +%H:%M)$BLUE]\
-$BLUE[$RED\u@\h:\w$GREEN\$(parse_git_branch)$BLUE]\
+$BLUE[$RED\u@\h:$YELLOW\W$GREEN\$(parse_git_branch)$BLUE]\
 $GREEN\$ "
 PS2='> '
 PS4='+ '
@@ -168,5 +169,5 @@ if [ `uname -s` = "Darwin" ] ; then
     alias ls='\ls -FG'
     alias ll='\ls -aFlG'
     alias lsd='\ls -aldG * | egrep "^d"'
-    alias gvim='~/bin/gvim.mac'
+    alias gvim='~/bin/mvim'
 fi
