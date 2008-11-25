@@ -24,6 +24,7 @@ shopt -s checkwinsize
 # mysql
 if [ -d /usr/local/mysql/bin ]; then
     PATH=/usr/local/mysql/bin:$PATH
+    MANPATH=/usr/local/mysql/man:$MANPATH
 fi
 
 # php
@@ -39,6 +40,7 @@ fi
 # for ports in mac os x
 if [ -d /opt/local/bin ]; then
     PATH=/opt/local/bin:$PATH
+    MANPATH=/opt/local/man:$PATH
 fi
 
 # local sbin apps
@@ -48,12 +50,14 @@ fi
 
 if [ -d /usr/local/bin ]; then
     PATH=/usr/local/bin:$PATH
+    MANPATH=/usr/local/man:$MANPATH
 fi
 
 if [ -d $HOME/bin ]; then
     PATH=$HOME/bin:$PATH
 fi
 export PATH
+export MANPATH
 
 # Locale info
 
