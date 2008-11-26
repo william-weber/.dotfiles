@@ -14,6 +14,7 @@ mv -f .vim $OLD
 mv -f .vimrc $OLD
 mv -f .gitconfig $OLD
 mv -f .autotest $OLD
+mv -f .irbrc $OLD
 
 ln -s $DOTFILES/.profile .profile
 ln -s $DOTFILES/.bashrc .bashrc
@@ -25,3 +26,4 @@ ln -s $DOTFILES/.gitconfig .gitconfig
 ln -s $DOTFILES/.vim .vim
 ln -s $DOTFILES/.vimrc .vimrc
 ln -s $DOTFILES/.autotest .autotest
+ln -s $DOTFILES/.irbrc .irbrc
