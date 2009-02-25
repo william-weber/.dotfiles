@@ -27,6 +27,12 @@ if [ -d /usr/local/mysql/bin ]; then
     MANPATH=/usr/local/mysql/man:$MANPATH
 fi
 
+# cuda 
+if [ -d /usr/local/mysql/bin ]; then
+    PATH=/usr/local/cuda/bin:$PATH
+    MANPATH=/usr/local/cuda/man:$MANPATH
+fi
+
 # php
 if [ -d /usr/local/php/bin ]; then
     PATH=/usr/local/php/bin:$PATH
@@ -40,7 +46,12 @@ fi
 # for ports in mac os x
 if [ -d /opt/local/bin ]; then
     PATH=/opt/local/bin:$PATH
-    MANPATH=/opt/local/man:$PATH
+    MANPATH=/opt/local/man:$MANPATH
+fi
+
+# for man pages in mac os x
+if [ -d /usr/share/man ]; then
+    MANPATH=/usr/share/man:$MANPATH
 fi
 
 # local sbin apps
@@ -56,6 +67,14 @@ fi
 if [ -d $HOME/bin ]; then
     PATH=$HOME/bin:$PATH
 fi
+
+
+# bash completion
+ if [ -f /opt/local/etc/bash_completion ]; then
+  . /opt/local/etc/bash_completion
+fi
+
+
 export PATH
 export MANPATH
 
