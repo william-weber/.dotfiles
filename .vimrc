@@ -78,7 +78,14 @@ set viminfo='1000,f1,\"50,:100,@100,/100
 set visualbell
 
 " Easy on the eyes...
-colorscheme desert
+colorscheme vibrantink
+
+" Make tab switching use normal mac keys
+map  <D-Left>   :tabp<CR>
+imap <D-Left>   <Esc>:tabp<CR>i
+map  <D-Right>  :tabn<CR>
+imap <D-Right>  <Esc>:tabn<CR>i 
+
 
 " use tab in visual mode to indent
 :vnoremap <Tab> >>
