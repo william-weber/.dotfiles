@@ -14,3 +14,6 @@
 --regex-vhdl=/^[ \t]*subtype[ \t]*([a-zA-Z0-9_]+)/\1/y,subtype/
 --regex-vhdl=/^[ \t]*configuration[ \t]*([a-zA-Z0-9_]+)/\1/n,configuration/
 
+--langdef=rubytest
+--langmap=rubytest:.rb
+--regex-rubytest=/test \"(.*)\" do/\1/f/
