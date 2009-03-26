@@ -45,8 +45,8 @@ fi
 
 # for ports in mac os x
 if [ -d /opt/local/bin ]; then
-    PATH=/opt/local/bin:$PATH
-    MANPATH=/opt/local/man:$MANPATH
+    PATH=/opt/local/bin:/opt/local/sbin:$PATH
+    MANPATH=/opt/local/man:/opt/local/share/man:$MANPATH
 fi
 
 # for man pages in mac os x
@@ -61,11 +61,16 @@ fi
 
 if [ -d /usr/local/bin ]; then
     PATH=/usr/local/bin:$PATH
-    MANPATH=/usr/local/man:$MANPATH
+    MANPATH=/usr/local/man:/usr/local/share/man:$MANPATH
 fi
 
 if [ -d $HOME/bin ]; then
     PATH=$HOME/bin:$PATH
+fi
+
+if [ "$TERM" != "dumb" ]; then
+    export LS_OPTIONS='--color=auto'
+    eval `dircolors ~/.dir_colors`
 fi
 
 
@@ -155,11 +160,11 @@ proml
 #fi
 
 
-alias ls='\ls -F --color=auto'
-alias ll='\ls -aFl --color=auto'
-alias lsd='\ls -ald --color=auto * | egrep "^d"'
-alias bymostrecent="ls -lurtF"  
-alias bysize="ls -lurS"  
+alias ls='\ls -hF $LS_OPTIONS'
+alias ll='\ls -ahFl $LS_OPTIONS'
+alias lsd='\ls -ahld $LS_OPTIONS * | egrep "^d"'
+alias lsbymostrecent="ls -lhurtF"  
+alias lsbysize="ls -luhrS"  
 alias psg="ps -auxww | grep -i "
 alias ..="cd .."
 alias ...="cd ../.."
@@ -189,9 +194,9 @@ fi
 
 # Mac OS X specific
 if [ `uname -s` = "Darwin" ] ; then
-    alias ls='\ls -FG'
-    alias ll='\ls -aFlG'
-    alias lsd='\ls -aldG * | egrep "^d"'
+#    alias ls='\ls -FG'
+#    alias ll='\ls -aFlG'
+#    alias lsd='\ls -aldG * | egrep "^d"'
     alias gvim='~/bin/mvim'
 fi
 

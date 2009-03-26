@@ -15,6 +15,7 @@ mv -f .vimrc $OLD
 mv -f .gitconfig $OLD
 mv -f .autotest $OLD
 mv -f .irbrc $OLD
+mv -f .dir_colors $OLD
 
 ln -s $DOTFILES/.profile .profile
 ln -s $DOTFILES/.bashrc .bashrc
@@ -27,3 +28,4 @@ ln -s $DOTFILES/.vim .vim
 ln -s $DOTFILES/.vimrc .vimrc
 ln -s $DOTFILES/.autotest .autotest
 ln -s $DOTFILES/.irbrc .irbrc
+ln -s $DOTFILES/.dir_colors .dir_colors
