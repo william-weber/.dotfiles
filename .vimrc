@@ -80,6 +80,10 @@ set visualbell
 " Easy on the eyes...
 colorscheme vibrantink
 
+" skip the default mapping of the apple key in
+" /Applications/MacVim.app/Contents/Resources/vim/gvimrc
+let macvim_skip_cmd_opt_movement = 1
+
 " Make tab switching use normal mac keys
 map  <D-Left>   :tabp<CR>
 imap <D-Left>   <Esc>:tabp<CR>i

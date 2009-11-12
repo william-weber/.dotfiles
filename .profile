@@ -22,3 +22,12 @@ if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
 
+
+##
+# Your previous /Users/chadb/.profile file was backed up as /Users/chadb/.profile.macports-saved_2009-09-09_at_12:02:51
+##
+
+# MacPorts Installer addition on 2009-09-09_at_12:02:51: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+

@@ -21,6 +21,11 @@ shopt -s checkwinsize
 
 # add some more dirs to search binaries for...
 
+# for man pages in mac os x
+if [ -d /usr/share/man ]; then
+    MANPATH=/usr/share/man:$MANPATH
+fi
+
 # mysql
 if [ -d /usr/local/mysql/bin ]; then
     PATH=/usr/local/mysql/bin:$PATH
@@ -47,11 +52,6 @@ fi
 if [ -d /opt/local/bin ]; then
     PATH=/opt/local/bin:/opt/local/sbin:$PATH
     MANPATH=/opt/local/man:/opt/local/share/man:$MANPATH
-fi
-
-# for man pages in mac os x
-if [ -d /usr/share/man ]; then
-    MANPATH=/usr/share/man:$MANPATH
 fi
 
 # local sbin apps
@@ -172,7 +172,13 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias +='pushd .'
 alias _='popd'
+alias ss='script/server'
+alias sc='script/console'
+alias sg='script/generator'
+alias sa='script/about'
+
 #convenient sets because i'm lazy
+
 bdd="beardendesigns.com"
 gc="glenncertain.com"
 rdi="riverdaleinn.com"
@@ -206,3 +212,6 @@ if [ -f /usr/local/jruby/bin/jruby ]; then
     #export GEM_HOME=/usr/local/lib/ruby/gems/1.8
     PATH=$PATH:/usr/local/jruby/bin
 fi
+
+
+if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi

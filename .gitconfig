@@ -25,5 +25,6 @@
     co = checkout
     df = diff
     lg = log -p
-
+[apply]
+    whitespace = nowarn
 
