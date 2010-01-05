@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/chadb/Sites/surveil/public/stylesheets/sass'
+let g:netrw_dirhist_2='/Users/chadb/Sites/experiencejax/app/views/invite_mailer'
+let g:netrw_dirhist_3='/Users/chadb/Sites/experiencejax/vendor/plugins/sortable_table'
+let g:netrw_dirhist_4='/Users/chadb/Sites/experiencejax/vendor/plugins/sortable_table/test'
+let g:netrw_dirhist_5='/Users/chadb/Sites/experiencejax/vendor/plugins/sortable_table/test/rails_root'
+let g:netrw_dirhist_6='/Users/chadb/Sites/experiencejax/vendor/plugins/sortable_table/test/rails_root/test'
+let g:netrw_dirhist_7='/Users/chadb/Sites/experiencejax/vendor/plugins/sortable_table/test/rails_root/test/functional'
+let g:netrw_dirhist_8='/Users/chadb/Sites/experiencejax/app/views'
+let g:netrw_dirhist_9='/Users/chadb/Sites/experiencejax/app/views/home'
