@@ -4,30 +4,15 @@ OLD=${DOTFILES}/backup/`date  +%Y%m%d%H%M%S`
 cd $HOME
 mkdir -p $OLD
 
-mv -f .profile $OLD
-mv -f .bashrc $OLD
-mv -f .bash_logout $OLD
-mv -f .ctags $OLD
-mv -f .gvimrc $OLD
-mv -f .signature $OLD
-mv -f .vim $OLD
-mv -f .vimrc $OLD
-mv -f .gitconfig $OLD
-mv -f .autotest $OLD
-mv -f .irbrc $OLD
-mv -f .dir_colors $OLD
-mv -f .gemrc $OLD
+files=( .bash_profile .bashrc .bash_logout .ctags .gvimrc .signature .vim .vimrc .gitconfig .autotest .irbrc .dir_colors .gemrc )
 
-ln -s $DOTFILES/.profile .profile
-ln -s $DOTFILES/.bashrc .bashrc
-ln -s $DOTFILES/.bash_logout .bash_logout
-ln -s $DOTFILES/.ctags .ctags
-ln -s $DOTFILES/.gvimrc .gvimrc
-ln -s $DOTFILES/.signature .signature
-ln -s $DOTFILES/.gitconfig .gitconfig
-ln -s $DOTFILES/.vim .vim
-ln -s $DOTFILES/.vimrc .vimrc
-ln -s $DOTFILES/.autotest .autotest
-ln -s $DOTFILES/.irbrc .irbrc
-ln -s $DOTFILES/.dir_colors .dir_colors
-ln -s $DOTFILES/.gemrc .gemrc
+for file in ${files[*]}
+do
+    if [ -f $file ]; then
+        echo "Saved $file in $OLD"
+        mv -f $file $OLD
+        ln -s $DOTFILES/$file $file 
+    fi
+done
+
+cd -
