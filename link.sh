@@ -8,6 +8,7 @@ files=( .bash_profile .bashrc .bash_logout .ctags .gvimrc .signature .vim .vimrc
 
 for file in ${files[*]}
 do
+    touch $file
     if [ -f $file ]; then
         echo "Saved $file in $OLD"
         mv -f $file $OLD
