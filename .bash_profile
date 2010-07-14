@@ -131,6 +131,7 @@ lmcdental="lmcdental.lmcmc.com"
 
 export EDITOR=vim
 export CVS_RSH=ssh
+export GREP_OPTIONS='-irn --color'
 
 
 #enable vi command line editing

@@ -1,4 +1,7 @@
-version 6.0
+"version 6.0
+
+set nocompatible
+syntax on
 filetype plugin indent on
 set laststatus=2
 set statusline=%<%f%h%m%r%=%l,%c%V\ %P
@@ -67,7 +70,6 @@ set incsearch
 set mouse=a
 set ruler
 set smartcase
-syntax on
 if &syntax != 'help'
 set syntax=help
 endif
@@ -217,3 +219,5 @@ au BufNewFile,BufRead *.rhtml				set filetype=eruby
 
 let g:treeExplVertical=1 
 set spell
+
+
