@@ -127,11 +127,12 @@ bdd="beardendesigns.com"
 gc="glenncertain.com"
 rdi="riverdaleinn.com"
 lmc="lmcoutcomes.lmcmc.com"
+dodm="dodmlogin.lmcmc.com"
 lmcdental="lmcdental.lmcmc.com"
+aeg="americaseducationguide.com"
 
 export EDITOR=vim
 export CVS_RSH=ssh
-export GREP_OPTIONS='-irn --color'
 
 
 #enable vi command line editing
