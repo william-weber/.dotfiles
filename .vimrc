@@ -80,7 +80,7 @@ set viminfo='1000,f1,\"50,:100,@100,/100
 set visualbell
 
 " Easy on the eyes...
-colorscheme vibrantink
+colorscheme vividchalk
 
 " skip the default mapping of the apple key in
 " /Applications/MacVim.app/Contents/Resources/vim/gvimrc
