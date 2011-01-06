@@ -127,7 +127,7 @@ bdd="beardendesigns.com"
 gc="glenncertain.com"
 rdi="riverdaleinn.com"
 lmc="lmcoutcomes.lmcmc.com"
-dodm="dodmlogin.lmcmc.com"
+dodm="dodm.lmcmc.com"
 lmcdental="lmcdental.lmcmc.com"
 aeg="americaseducationguide.com"
 
