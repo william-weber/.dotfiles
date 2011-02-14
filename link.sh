@@ -1,5 +1,5 @@
 DOTFILES=.dotfiles
-OLD=${DOTFILES}/backup/`date  +%Y%m%d%H%M%S`
+OLD=$HOME/${DOTFILES}/backup/`date  +%Y%m%d%H%M%S`
 
 cd $HOME
 mkdir -p $OLD
@@ -11,8 +11,8 @@ do
     touch $file
     if [ -f $file ]; then
         echo "Saved $file in $OLD"
-        mv -f $file $OLD
-        ln -s $DOTFILES/$file $file 
+        cp --dereference $file $OLD
+        ln -nfs $DOTFILES/$file $file 
     fi
 done
 
