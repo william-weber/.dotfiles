@@ -48,6 +48,7 @@ fi
 if [ -d /usr/local/bin ]; then
     PATH=/usr/local/bin:$PATH
     MANPATH=/usr/local/man:/usr/local/share/man:$MANPATH
+    LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 fi
 
 if [ -d $HOME/bin ]; then
