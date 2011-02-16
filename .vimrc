@@ -220,4 +220,7 @@ au BufNewFile,BufRead *.rhtml				set filetype=eruby
 let g:treeExplVertical=1 
 set spell
 
-
+map tl :tabnext<CR>
+map th :tabprev<CR>
+map tn :tabnew<CR>
+map td :tabclose<CR>
