@@ -40,6 +40,11 @@ if [ -d /opt/local/bin ]; then
     MANPATH=/opt/local/man:/opt/local/share/man:$MANPATH
 fi
 
+if [ -d /opt/local/libexec/gnubin/ ]; then
+    PATH=/opt/local/libexec/gnubin/:$PATH
+    MANPATH=/opt/local/libexec/gnubin/man::$MANPATH
+fi
+
 # local sbin apps
 if [ -d /usr/local/sbin ]; then
     PATH=/usr/local/sbin:$PATH
