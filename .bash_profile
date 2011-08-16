@@ -27,10 +27,13 @@ shopt -s checkwinsize
 
 
 # bash completion
- if [ -f /opt/local/etc/bash_completion ]; then
+if [ -f /opt/local/etc/bash_completion ]; then
   . /opt/local/etc/bash_completion
 fi
 
+if [ -f /usr/local/etc/bash_completion ]; then
+  . /usr/local/etc/bash_completion
+fi
 
 
 ###########################################
@@ -104,9 +107,9 @@ proml
 #fi
 
 
-alias ls='\ls -hF $LS_OPTIONS'
-alias ll='\ls -ahFl $LS_OPTIONS'
-alias lsd='\ls -ahld $LS_OPTIONS * | egrep "^d"'
+alias ls='\ls -F $LS_OPTIONS'
+alias ll='\ls -aFl $LS_OPTIONS'
+alias lsd='\ls -ald $LS_OPTIONS * | egrep "^d"'
 alias lsbymostrecent="ls -lhurtF"  
 alias lsbysize="ls -luhrS"  
 alias psg="ps -auxww | grep -i "
