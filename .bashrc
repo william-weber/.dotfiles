@@ -61,8 +61,12 @@ if [ -d $HOME/bin ]; then
 fi
 
 if [ "$TERM" != "dumb" ]; then
-    export LS_OPTIONS='--color=auto'
-    eval `dircolors ~/.dir_colors`
+    if [ `uname` == 'Darwin' ]; then 
+        export LS_OPTIONS='-hG'
+    else
+        export LS_OPTIONS='-h --color=auto'
+        eval `dircolors ~/.dir_colors`
+    fi
 fi
 
 export PATH
