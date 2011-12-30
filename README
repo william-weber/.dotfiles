@@ -1,0 +1,18 @@
+.vim plugins
+
+  Hey!  I'm using tpope's pathogen plugin to install vim plugins.  However,
+  when installing new plugins use git submodule add rather than git clone.
+
+  Example:
+
+  tpope says, "To install..."
+
+    cd ~/.vim/bundle
+    git clone git://github.com/tpope/vim-rails.git
+
+  Change this to:
+
+    cd ~/.dotfiles
+    git submodule add git://github.com/tpope/vim-rails.git .vim/bundle/vim-rails
+
+
