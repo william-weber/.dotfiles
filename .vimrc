@@ -1,5 +1,5 @@
 "version 6.0
-
+call pathogen#infect()
 set nocompatible
 syntax on
 filetype plugin indent on
