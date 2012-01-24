@@ -1,4 +1,14 @@
-.vim plugins
+Installation
+
+cd $HOME
+git clone git://github.com/chadb/.dotfiles.git
+cd ~/.dotfiles
+git submodule init
+git submodule update
+./link.sh 
+
+
+VIM Plugins
 
   Hey!  I'm using tpope's pathogen plugin to install vim plugins.  However,
   when installing new plugins use git submodule add rather than git clone.
@@ -18,8 +28,8 @@
     git submodule add git://github.com/tpope/vim-rails.git .vim/bundle/vim-rails
 
 
-When checking out for the first time:
+  When checking out for the first time:
 
-  cd ~/.dotfiles
-  git submodule init
-  git submodule update
+    cd ~/.dotfiles
+    git submodule init
+    git submodule update
