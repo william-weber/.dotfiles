@@ -1,5 +1,4 @@
 "version 6.0
-call pathogen#infect()
 set nocompatible
 syntax on
 filetype plugin indent on
@@ -78,9 +77,6 @@ set smartindent
 set shiftwidth=4
 set viminfo='1000,f1,\"50,:100,@100,/100
 set visualbell
-
-" Easy on the eyes...
-colorscheme vividchalk
 
 " skip the default mapping of the apple key in
 " /Applications/MacVim.app/Contents/Resources/vim/gvimrc
@@ -224,3 +220,9 @@ map tl :tabnext<CR>
 map th :tabprev<CR>
 map tn :tabnew<CR>
 map td :tabclose<CR>
+
+call pathogen#infect()
+
+" Easy on the eyes...
+colorscheme vividchalk
+

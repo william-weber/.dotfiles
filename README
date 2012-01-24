@@ -7,6 +7,9 @@ git submodule init
 git submodule update
 ./link.sh 
 
+VIM Help Files
+  Remember to run
+    :Helptags
 
 VIM Plugins
 
