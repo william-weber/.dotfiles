@@ -123,6 +123,7 @@ alias ss='script/server'
 alias sc='script/console'
 alias sg='script/generator'
 alias sa='script/about'
+alias tmux="TERM=screen-256color-bce tmux"
 
 #convenient sets because i'm lazy
 
