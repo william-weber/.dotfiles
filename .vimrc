@@ -222,7 +222,7 @@ map tn :tabnew<CR>
 map td :tabclose<CR>
 
 call pathogen#infect()
-
+set t_Co=256
 " Easy on the eyes...
 colorscheme vividchalk
 
