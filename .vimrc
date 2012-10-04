@@ -226,3 +226,4 @@ set t_Co=256
 " Easy on the eyes...
 colorscheme vividchalk
 
+so ~/.vim/regexp_list.vim
