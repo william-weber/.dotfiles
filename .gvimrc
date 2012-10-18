@@ -4,3 +4,5 @@ if has("gui_mac")
 elseif has("gui_gtk") 
   set guifont=DejaVu\ Sans\ Mono\ 13
 end
+
+set transparency=15

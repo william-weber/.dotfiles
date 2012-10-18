@@ -35,6 +35,10 @@ if [ -f /usr/local/etc/bash_completion ]; then
   . /usr/local/etc/bash_completion
 fi
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
+
 
 ###########################################
 # fancy prompt with git branch
@@ -124,6 +128,7 @@ alias sc='script/console'
 alias sg='script/generator'
 alias sa='script/about'
 alias tmux="TERM=screen-256color-bce tmux"
+alias test="bundle exec rake parallel:test[^unit]; bundle exec rake parallel:test[^functional]; bundle exec rake parallel:test[^integration]; bundle exec rake parallel:features; bundle exec rake jasmine"
 
 #convenient sets because i'm lazy
 
@@ -137,6 +142,10 @@ aeg="americaseducationguide.com"
 
 export EDITOR=vim
 export CVS_RSH=ssh
+
+export CUCUMBER_FORMAT=progress
+export TURN_FORMAT=dot
+export LC_ALL=en_US.UTF-8
 
 
 #enable vi command line editing
