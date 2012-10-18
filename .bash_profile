@@ -124,7 +124,7 @@ alias .....="cd ../../../.."
 alias +='pushd .'
 alias _='popd'
 alias ss='script/server'
-alias sc='script/console'
+alias sc='pry -r config/environment.rb'
 alias sg='script/generator'
 alias sa='script/about'
 alias tmux="TERM=screen-256color-bce tmux"
@@ -142,6 +142,8 @@ aeg="americaseducationguide.com"
 
 export EDITOR=vim
 export CVS_RSH=ssh
+export CUCUMBER_FORMAT=progress
+export TURN_FORMAT=pretty
 
 export CUCUMBER_FORMAT=progress
 export TURN_FORMAT=dot
@@ -160,6 +162,8 @@ fi
 # Mac OS X specific
 if [ `uname -s` = "Darwin" ] ; then
     alias gvim='~/bin/mvim'
+    export LANG=en_US.UTF-8
+    export LC_ALL=en_US.UTF-8
 fi
 
 #if [ -f /usr/local/jruby/bin/jruby ]; then
