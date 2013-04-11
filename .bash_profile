@@ -123,12 +123,9 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias +='pushd .'
 alias _='popd'
-alias ss='script/server'
-alias sc='pry -r config/environment.rb'
-alias sg='script/generator'
-alias sa='script/about'
 alias tmux="TERM=screen-256color-bce tmux"
-alias test="bundle exec rake parallel:test[^unit]; bundle exec rake parallel:test[^functional]; bundle exec rake parallel:test[^integration]; bundle exec rake parallel:features; bundle exec rake jasmine"
+alias test="time rake parallel:test; time rake parallel:features"
+alias wip="bundle exec rake cucumber:wip"
 
 #convenient sets because i'm lazy
 
@@ -175,3 +172,6 @@ fi
 
 
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_FREE_MIN=500000
+export RUBY_HEAP_MIN_SLOTS=40000
