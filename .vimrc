@@ -77,6 +77,7 @@ set smartindent
 set shiftwidth=4
 set viminfo='1000,f1,\"50,:100,@100,/100
 set visualbell
+set relativenumber
 
 " skip the default mapping of the apple key in
 " /Applications/MacVim.app/Contents/Resources/vim/gvimrc
@@ -200,7 +201,7 @@ endfunction
 
 " ruby and eruby 
 au BufNewFile,BufRead *.rhtml				set filetype=eruby
-:autocmd BufNewFile,BufRead *.rjs,*.rb,*rbw,*.gem,*.gemspec,[rR]akefile* set filetype=ruby tabstop=2 softtabstop=2 shiftwidth=2
+:autocmd BufNewFile,BufRead *.rjs,*.rb,*rbw,*.gem,*.gemspec,*.feature,[rR]akefile* set filetype=ruby tabstop=2 softtabstop=2 shiftwidth=2
 
 " abbreviations
 
