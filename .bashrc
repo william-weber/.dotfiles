@@ -69,6 +69,8 @@ if [ "$TERM" != "dumb" ]; then
     fi
 fi
 
+PATH=/usr/local/share/npm/bin:$PATH
+
 export PATH
 export MANPATH
 
