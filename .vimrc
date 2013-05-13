@@ -8,6 +8,9 @@ let s:cpo_save=&cpo
 set cpo&vim
 set fileformats=unix,dos
 set fileformat=unix
+set scrolloff=2  " minumum 2 lines above/below cursor
+set list listchars=tab:»·,trail:· " show extra space characters
+set nofoldenable                  " disable code folding
 map! <xHome> <Home>
 map! <xEnd> <End>
 map! <S-xF4> <S-F4>
@@ -77,7 +80,19 @@ set smartindent
 set shiftwidth=4
 set viminfo='1000,f1,\"50,:100,@100,/100
 set visualbell
-set relativenumber
+
+" only use relative numbering in the focused window.
+if exists('&relativenumber')
+  set relativenumber
+  augroup WindowRNU
+    auto!
+    auto BufWinEnter,WinEnter,FocusGained * setlocal relativenumber
+    auto WinLeave,FocusLost               * setlocal number
+  augroup END
+endif
+" absolute line numbers in insert mode, relative otherwise for easy movement
+au InsertEnter * :set nu
+au InsertLeave * :set rnu
 
 " skip the default mapping of the apple key in
 " /Applications/MacVim.app/Contents/Resources/vim/gvimrc
