@@ -126,6 +126,7 @@ alias _='popd'
 alias tmux="TERM=screen-256color-bce tmux"
 alias test="time rake parallel:test; time rake parallel:features"
 alias wip="bundle exec rake cucumber:wip"
+alias cucumber="cucumber -r features/support/ -r features/step_definitions/"
 
 #convenient sets because i'm lazy
 
