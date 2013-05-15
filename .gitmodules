@@ -22,3 +22,6 @@
 [submodule "base-16-iterm2"]
 	path = base-16-iterm2
 	url = git://github.com/chriskempson/base16-iterm2.git
+[submodule ".vim/bundle/rename.vim"]
+	path = .vim/bundle/rename.vim
+	url = git://github.com/danro/rename.vim.git
