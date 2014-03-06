@@ -46,6 +46,12 @@ fi
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
+function parse_git_dirty {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+function parse_git_stash {
+  [[ $(git stash list 2> /dev/null | tail -n1) != "" ]] && echo "^"
+}
 
 function proml {
   local        BLUE="\[\033[0;34m\]"
@@ -67,7 +73,7 @@ function proml {
 
 PS1="${TITLEBAR}\
 $BLUE[$RED\$(date +%H:%M)$BLUE]\
-$BLUE[$RED\u@\h:$YELLOW\W$GREEN\$(parse_git_branch)$BLUE]\
+$BLUE[$RED\u@\h:$YELLOW\W$GREEN\$(parse_git_branch)$(parse_git_dirty)$(parse_git_stash)$BLUE]\
 $GREEN\$ "
 PS2='> '
 PS4='+ '
@@ -127,16 +133,10 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias test="time rake parallel:test; time rake parallel:features"
 alias wip="bundle exec rake cucumber:wip"
 alias cucumber="cucumber -r features/support/ -r features/step_definitions/"
+alias precompile="RAILS_ENV=development bundle exec rake assets:precompile"
+alias gem_theodolite='bundle config --delete local.theodolite'
+alias local_theodolite='bundle config local.theodolite ~/Sites/theodolite'
 
-#convenient sets because i'm lazy
-
-bdd="beardendesigns.com"
-gc="glenncertain.com"
-rdi="riverdaleinn.com"
-lmc="lmcoutcomes.lmcmc.com"
-dodm="dodm.lmcmc.com"
-lmcdental="lmcdental.lmcmc.com"
-aeg="americaseducationguide.com"
 
 export EDITOR=vim
 export CVS_RSH=ssh
@@ -145,7 +145,7 @@ export TURN_FORMAT=pretty
 
 export CUCUMBER_FORMAT=progress
 export TURN_FORMAT=dot
-export LC_ALL=en_US.UTF-8
+#export LC_ALL=en_US.UTF-8
 
 
 #enable vi command line editing
@@ -160,8 +160,8 @@ fi
 # Mac OS X specific
 if [ `uname -s` = "Darwin" ] ; then
     alias gvim='~/bin/mvim'
-    export LANG=en_US.UTF-8
-    export LC_ALL=en_US.UTF-8
+    #export LANG=en_US.UTF-8
+    #export LC_ALL=en_US.UTF-8
 fi
 
 #if [ -f /usr/local/jruby/bin/jruby ]; then
