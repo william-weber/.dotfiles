@@ -25,3 +25,12 @@
 [submodule ".vim/bundle/vim-zenburn"]
 	path = .vim/bundle/vim-zenburn
 	url = https://github.com/jnurmine/Zenburn.git
+[submodule ".vim/bundle/rename.vim"]
+	path = .vim/bundle/rename.vim
+	url = git://github.com/danro/rename.vim.git
+[submodule ".vim/bundle/vim-tmux-navigator"]
+	path = .vim/bundle/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git

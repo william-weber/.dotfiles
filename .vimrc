@@ -1,4 +1,7 @@
 "version 6.0
+scriptencoding utf-8
+set encoding=utf-8
+set fileencodings=utf-8
 set nocompatible
 syntax on
 filetype plugin indent on
@@ -9,11 +12,19 @@ set cpo&vim
 set fileformats=unix,dos
 set fileformat=unix
 set scrolloff=2  " minumum 2 lines above/below cursor
-set list listchars=tab:»·,trail:· " show extra space characters
+" Highlight trailing whitespace
+set list
+set listchars=tab:»·,trail:·
+"if &listchars ==# 'eol:$'
+"  set listchars=tab:»·,trail:·,extends:>,precedes:<,nbsp:+
+"  if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
+"    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+"  endif
+"endif
 set nofoldenable                  " disable code folding
 map! <xHome> <Home>
 map! <xEnd> <End>
-map! <S-xF4> <S-F4>
+map! <S-xF4> <S-F4>                         
 map! <S-xF3> <S-F3>
 map! <S-xF2> <S-F2>
 map! <S-xF1> <S-F1>
@@ -24,28 +35,14 @@ map! <xF1> <F1>
 " replace all multiple spaces with one space
 vmap ,gq :s/\s\+/ /g  gvgq
 nmap ,gq :%s/\s\+/ /g  gq1G
-" shortcut for html tags
-nmap ,hx wbF <df>f <df>
-nmap ,ht wbi <tt>  ea </tt>  bb
-nmap ,hp wi <p>  
-nmap ,hP wbi <pre>  $a </pre>  bb
-nmap ,hs wbi <strong>  ea </strong>  bb
-nmap ,hu wbi <u>  ea </u>  bb
-nmap ,hi wbi <i>  ea </i>  bb
-nmap ,he wbi <em>  ea </em>  bb
-nmap ,hb wbi <b>  ea </b>  bb
-nmap ,h6 _i <h6>  A </h6>  
-nmap ,h5 _i <h5>  A </h5>  
-nmap ,h4 _i <h4>  A </h4>  
-nmap ,h3 _i <h3>  A </h3>  
-nmap ,h2 _i <h2>  A </h2>  
-nmap ,h1 _i <h1>  A </h1>  
-nmap ,mh wbgueyei <  ea> </  pa>  bba
-map Q gq
-vmap [%   [%m'gv``
-vmap ]%   ]%m'gv``
-vmap _j :call Justify('tw',4)  
-nmap _j :%call Justify('tw',4)  
+" shortcut for rake cucumber:wip
+nmap WW :Rake cucumber:wip <Return>
+" shortcut for pry
+nmap _P orequire 'pry'; binding.pry<ESC>
+" shortcut for show me the page
+nmap _S oThen show me the page<ESC>
+" shortcut for @wip
+nmap _W O@wip<ESC>
 map <xHome> <Home>
 map <xEnd> <End>
 map <S-xF4> <S-F4>
@@ -62,7 +59,6 @@ set backspace=2
 set expandtab
 set softtabstop=4
 set tabstop=4
-set fileencodings=utf-8,latin1
 set formatoptions=croq
 set winminheight=0
 set history=50
@@ -217,17 +213,9 @@ endfunction
 " ruby and eruby 
 au BufNewFile,BufRead *.rhtml				set filetype=eruby
 :autocmd BufNewFile,BufRead *.rjs,*.rb,*rbw,*.gem,*.gemspec,*.feature,[rR]akefile* set filetype=ruby tabstop=2 softtabstop=2 shiftwidth=2
+:autocmd BufNewFile,BufRead *.js set filetype=javascript tabstop=2 softtabstop=2 shiftwidth=2
 
 " abbreviations
-
-:abbr hte the
-" VHDL abbreviations
-:abbr sl; STD_LOGIC;
-:abbr slv; STD_LOGIC_VECTOR( downto );
-:abbr un; UNSIGNED( downto );
-:abbr s; SIGNED( downto );
-:abbr entity; library IEEE;use IEEE.STD_LOGIC_1164.all;entity name is    generic();    port();end name;
-:abbr arch; architecture rtl of name isbeginend rtl;
 
 let g:treeExplVertical=1 
 set spell
@@ -258,12 +246,3 @@ highlight PmenuSel     ctermbg=0   ctermfg=3
 highlight SpellBad     ctermbg=0   ctermfg=1
 
 so ~/.vim/regexp_list.vim
-
-" set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim
-
-if has("gui_running")
-   let s:uname = system("uname")
-   if s:uname == "Darwin\n"
-      set guifont=Menlo\ for\ Powerline
-   endif
-endif
