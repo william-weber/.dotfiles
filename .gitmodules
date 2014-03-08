@@ -22,3 +22,6 @@
 [submodule "base-16-iterm2"]
 	path = base-16-iterm2
 	url = git://github.com/chriskempson/base16-iterm2.git
+[submodule ".vim/bundle/vim-zenburn"]
+	path = .vim/bundle/vim-zenburn
+	url = https://github.com/jnurmine/Zenburn.git
