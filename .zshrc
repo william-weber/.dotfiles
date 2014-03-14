@@ -69,6 +69,8 @@ alias wip="bundle exec rake cucumber:wip"
 alias full_test="time rake parallel:test; time rake parallel:features"
 alias gem_theodolite='bundle config --delete local.theodolite'
 alias local_theodolite='bundle config local.theodolite ~/Sites/theodolite'
+
+alias zshrc="vim ~/.zshrc"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
