@@ -214,6 +214,7 @@ endfunction
 au BufNewFile,BufRead *.rhtml				set filetype=eruby
 :autocmd BufNewFile,BufRead *.rjs,*.rb,*rbw,*.gem,*.gemspec,*.feature,[rR]akefile* set filetype=ruby tabstop=2 softtabstop=2 shiftwidth=2
 :autocmd BufNewFile,BufRead *.js set filetype=javascript tabstop=2 softtabstop=2 shiftwidth=2
+:autocmd BufNewFile,BufRead *.coffee set filetype=coffeescript tabstop=2 softtabstop=2 shiftwidth=2
 
 " abbreviations
 

@@ -41,12 +41,12 @@ DISABLE_AUTO_TITLE=true
 # Uncomment following line if you want to  shown in the command execution time stamp 
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd.mm.yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(autojump git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -63,8 +63,12 @@ export RUBY_HEAP_MIN_SLOTS=40000
 
 export CUCUMBER_FORMAT=progress
 export TURN_FORMAT=dot
+
 alias cucumber="cucumber -r features/support/ -r features/step_definitions/"
-alias test="time rake parallel:test; time rake parallel:features"
+alias wip="bundle exec rake cucumber:wip"
+alias full_test="time rake parallel:test; time rake parallel:features"
+alias gem_theodolite='bundle config --delete local.theodolite'
+alias local_theodolite='bundle config local.theodolite ~/Sites/theodolite'
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -81,4 +85,5 @@ alias test="time rake parallel:test; time rake parallel:features"
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 source $ZSH/oh-my-zsh.sh
