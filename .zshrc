@@ -31,7 +31,7 @@ DISABLE_AUTO_TITLE=true
 # DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
@@ -46,13 +46,13 @@ HIST_STAMPS="dd.mm.yyyy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump git)
+plugins=(autojump brew bundler capistrano cloudapp coffee gem git node npm osx rails rake web-search)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/Users/sandyw/.rvm/gems/ruby-1.8.7-p330/bin:/Users/sandyw/.rvm/gems/ruby-1.8.7-p330@global/bin:/Users/sandyw/.rvm/rubies/ruby-1.8.7-p330/bin:/Users/sandyw/.rvm/bin:/usr/local/share/npm/bin:/Users/sandyw/bin:/usr/local/bin:/usr/local/cuda/bin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=$PATH:"/Users/sandyw/.rvm/gems/ruby-1.8.7-p330/bin:/Users/sandyw/.rvm/gems/ruby-1.8.7-p330@global/bin:/Users/sandyw/.rvm/rubies/ruby-1.8.7-p330/bin:/Users/sandyw/.rvm/bin:/usr/local/share/npm/bin:/Users/sandyw/bin:/usr/local/bin:/usr/local/cuda/bin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 #######################
 #  Ruby/Rails Config  #
@@ -71,6 +71,7 @@ alias gem_theodolite='bundle config --delete local.theodolite'
 alias local_theodolite='bundle config local.theodolite ~/Sites/theodolite'
 
 alias zshrc="vim ~/.zshrc"
+alias rsync='noglob rsync'
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
