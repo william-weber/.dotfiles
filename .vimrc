@@ -214,6 +214,8 @@ endfunction
 au BufNewFile,BufRead *.rhtml				set filetype=eruby
 :autocmd BufNewFile,BufRead *.rjs,*.rb,*rbw,*.gem,*.gemspec,*.feature,[rR]akefile* set filetype=ruby tabstop=2 softtabstop=2 shiftwidth=2
 :autocmd BufNewFile,BufRead *.js set filetype=javascript tabstop=2 softtabstop=2 shiftwidth=2
+:autocmd BufNewFile,BufRead *.coffee set filetype=cofeescript tabstop=2 softtabstop=2 shiftwidth=2
+:autocmd BufNewFile,BufRead *.css set filetype=css tabstop=2 softtabstop=2 shiftwidth=2
 
 " abbreviations
 
@@ -229,20 +231,21 @@ call pathogen#infect()
 set t_Co=256
 " Easy on the eyes...
 set background=dark
-colorscheme base16-railscasts
+let g:molokai_original = 0
+colorscheme monokai
 highlight clear SignColumn
-highlight VertSplit    ctermbg=236
-highlight ColorColumn  ctermbg=237
-highlight LineNr       ctermbg=236 ctermfg=240
-highlight CursorLineNr ctermbg=236 ctermfg=240
+"highlight VertSplit    ctermbg=236
+"highlight ColorColumn  ctermbg=237
+highlight LineNr       ctermbg=0 ctermfg=236
+highlight CursorLineNr ctermbg=0 ctermfg=240
 highlight CursorLine   ctermbg=236
 highlight StatusLineNC ctermbg=238 ctermfg=0
-highlight StatusLine   ctermbg=240 ctermfg=12
+highlight StatusLine   ctermbg=235 ctermfg=15
 highlight IncSearch    ctermbg=0   ctermfg=3
 highlight Search       ctermbg=0   ctermfg=9
-highlight Visual       ctermbg=3   ctermfg=0
-highlight Pmenu        ctermbg=240 ctermfg=12
-highlight PmenuSel     ctermbg=0   ctermfg=3
-highlight SpellBad     ctermbg=0   ctermfg=1
+highlight Visual       ctermbg=15  ctermfg=0
+"highlight Pmenu        ctermbg=240 ctermfg=12
+"highlight PmenuSel     ctermbg=0   ctermfg=3
+"highlight SpellBad     ctermbg=0   ctermfg=1
 
 so ~/.vim/regexp_list.vim
