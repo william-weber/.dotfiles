@@ -46,7 +46,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump bower brew bundler capistrano coffee gem git nanoc node npm vi-mode)
+plugins=(autojump bower brew capistrano gem git nanoc node npm vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
