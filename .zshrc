@@ -41,12 +41,12 @@ DISABLE_AUTO_TITLE=true
 # Uncomment following line if you want to  shown in the command execution time stamp 
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd.mm.yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(autojump brew bower coffee dircycle gem git nanoc node npm nyan vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -54,17 +54,36 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/Users/sandyw/.rvm/gems/ruby-1.8.7-p330/bin:/Users/sandyw/.rvm/gems/ruby-1.8.7-p330@global/bin:/Users/sandyw/.rvm/rubies/ruby-1.8.7-p330/bin:/Users/sandyw/.rvm/bin:/usr/local/share/npm/bin:/Users/sandyw/bin:/usr/local/bin:/usr/local/cuda/bin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
+alias tmux="TERM=screen-256color-bce tmux"
+alias ll="ls -laF"
+alias zshrc="vim ~/.zshrc"
+alias vimrc="vim ~/.vimrc"
+
 #######################
 #  Ruby/Rails Config  #
 #######################
-export RUBY_GC_MALLOC_LIMIT=1000000000
-export RUBY_FREE_MIN=500000
-export RUBY_HEAP_MIN_SLOTS=40000
+# Ruby 2.0.x
+# export RUBY_GC_MALLOC_LIMIT=1000000000
+# export RUBY_FREE_MIN=500000
+# export RUBY_HEAP_MIN_SLOTS=40000
+
+# Ruby 2.1.x
+# http://stackoverflow.com/questions/16299419/garbage-collector-tuning-in-ruby-2-0
+# Boost Ruby
+export RUBY_GC_HEAP_INIT_SLOTS=1000000 # 1M
+export RUBY_GC_HEAP_FREE_SLOTS=500000  # 0.5M
+export RUBY_GC_HEAP_GROWTH_FACTOR=1.1
+export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=10000000 # 10M
+export RUBY_GC_MALLOC_LIMIT_MAX=1000000000    # 1G
+export RUBY_GC_MALLOC_LIMIT_GROWTH_FACTOR=1.1
+# # export RUBY_GC_OLDMALLOC_LIMIT=500000000      # 500M
+# # export RUBY_GC_OLDMALLOC_LIMIT_MAX=1000000000 # 1G
+# # export RUBY_GC_OLDMALLOC_LIMIT_GROWTH_FACTOR=1.1
 
 export CUCUMBER_FORMAT=progress
 export TURN_FORMAT=dot
 alias cucumber="cucumber -r features/support/ -r features/step_definitions/"
-alias test="time rake parallel:test; time rake parallel:features"
+alias full_test="time rake parallel:test; time rake parallel:features"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -82,3 +101,6 @@ alias test="time rake parallel:test; time rake parallel:features"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 source $ZSH/oh-my-zsh.sh
+  [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
