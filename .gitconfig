@@ -33,3 +33,5 @@
 
 [push]
 	default = simple
+[core]
+	excludesfile = /Users/sandyw/.gitignore_global
