@@ -74,13 +74,16 @@ export RUBY_GC_MALLOC_LIMIT_GROWTH_FACTOR=1.1
 export CUCUMBER_FORMAT=progress
 export TURN_FORMAT=dot
 
-alias cucumber="cucumber -r features/support/ -r features/step_definitions/"
+export UNBUNDLED_COMMANDS=cucumber
+alias cucumber="noglob cucumber -r features/support/ -r features/step_definitions/"
 alias wip="bundle exec rake cucumber:wip"
 alias full_test="time rake parallel:test; time rake parallel:features"
 alias gem_theodolite='bundle config --delete local.theodolite'
 alias local_theodolite='bundle config local.theodolite ~/Sites/theodolite'
 
 alias zshrc="vim ~/.zshrc"
+alias vimrc="vim ~/.vimrc"
+alias tmuxconf="vim ~/.tmux.conf"
 alias rsync='noglob rsync'
 # export MANPATH="/usr/local/man:$MANPATH"
 
