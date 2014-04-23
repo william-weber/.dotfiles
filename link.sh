@@ -4,7 +4,7 @@ OLD=$HOME/${DOTFILES}/backup/`date  +%Y%m%d%H%M%S`
 cd $HOME
 mkdir -p $OLD
 
-files=( .bash_profile .bashrc .bash_logout .ctags .gvimrc .signature .vim .vimrc .gitconfig .autotest .irbrc .dir_colors .gemrc .screenrc .tmux.conf )
+files=( .bash_profile .bashrc .bash_logout .ctags .gvimrc .signature .vim .vimrc .gitconfig .autotest .irbrc .dir_colors .gemrc .screenrc .tmux.conf .zlogin .zshrc .zshrc-e )
 
 for file in ${files[*]}
 do
@@ -15,5 +15,7 @@ do
         ln -nfs $DOTFILES/$file $file 
     fi
 done
+
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 cd -
