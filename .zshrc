@@ -52,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$PATH:"/Users/sandyw/.rvm/gems/ruby-1.8.7-p330/bin:/Users/sandyw/.rvm/gems/ruby-1.8.7-p330@global/bin:/Users/sandyw/.rvm/rubies/ruby-1.8.7-p330/bin:/Users/sandyw/.rvm/bin:/usr/local/share/npm/bin:/Users/sandyw/bin:/usr/local/bin:/usr/local/cuda/bin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=$PATH:"/Users/sandyw/.rvm/gems/ruby-1.8.7-p330/bin:/Users/sandyw/.rvm/gems/ruby-1.8.7-p330@global/bin:/Users/sandyw/.rvm/rubies/ruby-1.8.7-p330/bin:/Users/sandyw/.rvm/bin:/usr/local/bin:/usr/local/share/npm/bin:/Users/sandyw/bin:/usr/local/cuda/bin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 #######################
 #  Ruby/Rails Config  #
