@@ -232,7 +232,7 @@ set t_Co=256
 " Easy on the eyes...
 set background=dark
 let g:molokai_original = 0
-colorscheme monokai
+colorscheme base16-railscasts
 highlight clear SignColumn
 "highlight VertSplit    ctermbg=236
 "highlight ColorColumn  ctermbg=237
