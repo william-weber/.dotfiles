@@ -1,7 +1,7 @@
 Installation
 
 cd $HOME
-git clone git://github.com/chadb/.dotfiles.git
+git clone git://github.com/sandyw/.dotfiles.git
 cd ~/.dotfiles
 git submodule init
 git submodule update
