@@ -299,9 +299,9 @@ map td :tabclose<CR>
 call pathogen#infect()
 set t_Co=256
 " Easy on the eyes...
-set background=dark
+"set background=dark
 let g:molokai_original = 0
-colorscheme base16-railscasts
+colorscheme base16-monokai
 highlight clear SignColumn
 "highlight VertSplit    ctermbg=236
 "highlight ColorColumn  ctermbg=237
@@ -313,8 +313,8 @@ highlight StatusLine   ctermbg=235 ctermfg=15
 highlight IncSearch    ctermbg=0   ctermfg=3
 highlight Search       ctermbg=0   ctermfg=9
 highlight Visual       ctermbg=15  ctermfg=0
-"highlight Pmenu        ctermbg=240 ctermfg=12
-"highlight PmenuSel     ctermbg=0   ctermfg=3
+highlight Pmenu        ctermbg=240 ctermfg=12
+highlight PmenuSel     ctermbg=0   ctermfg=3
 "highlight SpellBad     ctermbg=0   ctermfg=1
 
 so ~/.vim/regexp_list.vim
