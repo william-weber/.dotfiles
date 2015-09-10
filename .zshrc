@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="dogenpunk"
+ZSH_THEME="evan"
 DISABLE_AUTO_TITLE=true
 
 # Example aliases
@@ -52,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$PATH:"/Users/sandyw/.rvm/gems/ruby-1.8.7-p330/bin:/Users/sandyw/.rvm/gems/ruby-1.8.7-p330@global/bin:/Users/sandyw/.rvm/rubies/ruby-1.8.7-p330/bin:/Users/sandyw/.rvm/bin:/usr/local/bin:/usr/local/share/npm/bin:/Users/sandyw/bin:/usr/local/cuda/bin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=$PATH:"/usr/local/bin:/usr/local/share/npm/bin:/Users/sandy/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 alias tmux="TERM=screen-256color-bce tmux"
 alias ll="ls -laF"
@@ -80,11 +80,9 @@ export CUCUMBER_FORMAT=progress
 export TURN_FORMAT=dot
 
 export UNBUNDLED_COMMANDS=cucumber
-alias cucumber="noglob cucumber -r features/support/ -r features/step_definitions/"
 alias wip="bundle exec rake cucumber:wip"
-alias full_test="time rake parallel:test; time rake parallel:features"
-alias gem_theodolite='bundle config --delete local.theodolite'
-alias local_theodolite='bundle config local.theodolite ~/Sites/theodolite'
+alias full_test="time rake spec:no_acceptance; time cucumber -t ~@run_solo -t ~@in_progress -t ~@javascript features; time rake spec:acceptance:no_javascript"
+alias migrate_all_databases="rake db:migrate && RAILS_ENV=test rake db:migrate"
 
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
@@ -92,12 +90,8 @@ alias tmuxconf="vim ~/.tmux.conf"
 alias rsync='noglob rsync'
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# Preferred editor for local and remote sessions
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -109,5 +103,3 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 source $ZSH/oh-my-zsh.sh
   [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
