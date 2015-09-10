@@ -12,9 +12,22 @@ set cpo&vim
 set fileformats=unix,dos
 set fileformat=unix
 set scrolloff=2  " minumum 2 lines above/below cursor
+set hidden
+set showmatch     " set show matching parenthesis
+set ignorecase    " ignore case when searching
+set smartcase     " ignore case if search pattern is all lowercase,
+                    "    case-sensitive otherwise
+set incsearch     " show search matches as you type
+set nobackup
+set noswapfile
+set pastetoggle=<F2>
+nnoremap ; :
+
 " Highlight trailing whitespace
 set list
 set listchars=tab:»·,trail:·
+"ctrlp plugin
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 "if &listchars ==# 'eol:$'
 "  set listchars=tab:»·,trail:·,extends:>,precedes:<,nbsp:+
 "  if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
@@ -32,9 +45,65 @@ map! <xF4> <F4>
 map! <xF3> <F3>
 map! <xF2> <F2>
 map! <xF1> <F1>
+" Use Q for formatting the current paragraph (or selection)
+vmap Q gq
+nmap Q gqap
 " replace all multiple spaces with one space
 vmap ,gq :s/\s\+/ /g  gvgq
 nmap ,gq :%s/\s\+/ /g  gq1G
+" Dont ask to re-read files changed outside vim
+set autoread
+" New buffer at direction
+nmap <leader>sh  :leftabove  vnew<CR>
+nmap <leader>sl  :rightbelow vnew<CR>
+nmap <leader>sk  :leftabove  new<CR>
+nmap <leader>sj  :rightbelow new<CR>
+" arrows resize splits
+nnoremap <UP>    <C-w>+
+nnoremap <DOWN>  <C-w>-
+nnoremap <LEFT>  <C-w>>
+nnoremap <RIGHT> <C-w><
+" Checktime reloads files editted outside vim (git)
+nnoremap <leader>q :checktime
+
+" Random Leader Commands
+nnoremap <leader>a :tabe\|:Ack 
+nnoremap <leader>g :Git
+nnoremap <leader>4 :tabclose<CR>
+
+nnoremap j gj
+nnoremap k gk
+
+" change the mapleader from \ to ,
+let mapleader=","
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" Clear highlighting
+map <C-h> :nohl<cr>
+
+" Press Shift+P while in visual mode to replace the selection without
+" overwriting the default register
+vmap P p :call setreg('"', getreg('0')) <CR>
+
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+map N Nzz
+map n nzz
+
 " shortcut for rake cucumber:wip
 nmap WW :Rake cucumber:wip <Return>
 " shortcut for pry
