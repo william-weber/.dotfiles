@@ -1,5 +1,5 @@
 [user]
-	name = Sandy Weber
+	name = sandyw
 	email = sandy.j.weber@gmail.com
 [color]
 	diff = auto
@@ -33,5 +33,12 @@
 
 [push]
 	default = simple
-[core]
-	excludesfile = /Users/sandyw/.gitignore_global
+
+[hub]
+protocol = https
+
+[interactive]
+  singlekey = true
+[grep]
+	extendRegexp = true
+	lineNumber = true
