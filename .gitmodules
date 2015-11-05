@@ -46,3 +46,6 @@
 [submodule ".vim/bundle/vim-monokai"]
 	path = .vim/bundle/vim-monokai
 	url = git@github.com:rickharris/vim-monokai.git
+[submodule ".vim/bundle/vim-easygrep"]
+	path = .vim/bundle/vim-easygrep
+	url = https://github.com/dkprice/vim-easygrep
