@@ -29,10 +29,3 @@ VIM Plugins
 
     cd ~/.dotfiles
     git submodule add git://github.com/tpope/vim-rails.git .vim/bundle/vim-rails
-
-
-  When checking out for the first time:
-
-    cd ~/.dotfiles
-    git submodule init
-    git submodule update
