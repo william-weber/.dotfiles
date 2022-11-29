@@ -46,3 +46,28 @@
 [submodule ".vim/bundle/vim-easygrep"]
 	path = .vim/bundle/vim-easygrep
 	url = https://github.com/dkprice/vim-easygrep
+[submodule ".vim/bundle/xterm-color-table.vim"]
+	path = .vim/bundle/xterm-color-table.vim
+	url = git@github.com:guns/xterm-color-table.vim.git
+[submodule ".vim/bundle/vim-pathogen"]
+	path = .vim/bundle/vim-pathogen
+	url = git@github.com:tpope/vim-pathogen.git
+[submodule "iTerm2-Color-Schemes"]
+	path = iTerm2-Color-Schemes
+	url = git@github.com:mbadolato/iTerm2-Color-Schemes.git
+[submodule "LS_COLORS"]
+	path = LS_COLORS
+	url = git@github.com:trapd00r/LS_COLORS.git
+[submodule ".vim/bundle/ag.vim"]
+	path = .vim/bundle/ag.vim
+	url = git@github.com:rking/ag.vim.git
+[submodule ".vim/bundle/indentLine"]
+	path = .vim/bundle/indentLine
+	url = https://github.com/Yggdroot/indentLine.git
+[submodule ".vim/bundle/vim-yaml-folds"]
+	path = .vim/bundle/vim-yaml-folds
+	url = https://github.com/pedrohdz/vim-yaml-folds.git
+[submodule ".vim/pack/coc/start/coc.nvim"]
+	path = .vim/pack/coc/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
+	branch = release
