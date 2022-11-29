@@ -1,7 +1,7 @@
 Installation
 
 cd $HOME
-git clone git://github.com/sandyw/.dotfiles.git
+git clone [THIS REPO]
 cd ~/.dotfiles
 git submodule init
 git submodule update
