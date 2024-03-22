@@ -1,5 +1,6 @@
 source ~/.dotfiles/.vim/bundle/vim-pathogen/autoload/pathogen.vim
 
+
 "version 6.0
 scriptencoding utf-8
 set encoding=utf-8
@@ -45,7 +46,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 "    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
 "  endif
 "endif
-set nofoldenable                  " disable code folding
+"set nofoldenable                  
 map! <xHome> <Home>
 map! <xEnd> <End>
 map! <S-xF4> <S-F4>                         
@@ -135,6 +136,7 @@ map <xF2> <F2>
 map <xF1> <F1>
 let &cpo=s:cpo_save
 unlet s:cpo_save
+set nofixendofline
 set backspace=2
 set expandtab
 set softtabstop=2
@@ -294,7 +296,7 @@ endfunction
 au BufNewFile,BufRead *.rhtml				set filetype=eruby
 :autocmd BufNewFile,BufRead *.rjs,*.rb,*rbw,*.gem,*.gemspec,*.feature,*.thor,[rR]akefile* set filetype=ruby tabstop=2 softtabstop=2 shiftwidth=2
 :autocmd BufNewFile,BufRead *.js set filetype=javascript tabstop=2 softtabstop=2 shiftwidth=2
-:autocmd BufNewFile,BufRead *.tsx set tabstop=2 softtabstop=2 shiftwidth=2
+:autocmd BufNewFile,BufRead *.tsx,*.jsx,*.vue set tabstop=2 softtabstop=2 shiftwidth=2
 :autocmd BufNewFile,BufRead *.css set filetype=css tabstop=2 softtabstop=2 shiftwidth=2
 :autocmd BufNewFile,BufRead *.coffee set filetype=coffeescript tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -450,6 +452,9 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
+" Disable quote concealing in JSON files
+let g:vim_json_conceal=0
+
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
 xmap if <Plug>(coc-funcobj-i)
@@ -507,4 +512,7 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" fix endwise w/coc
+inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() :"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>\<c-r>=EndwiseDiscretionary()\<CR>" 
 
