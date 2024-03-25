@@ -1,6 +1,3 @@
-source ~/.dotfiles/.vim/bundle/vim-pathogen/autoload/pathogen.vim
-
-
 "version 6.0
 scriptencoding utf-8
 set encoding=utf-8
